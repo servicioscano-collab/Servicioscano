@@ -134,28 +134,38 @@
             color: #888;
         }
     </style>
-        .gallery-grid {
+                .gallery-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
             gap: 15px;
-            margin-top: 20px;
+            margin: 20px auto;
+            max-width: 100%;
+            padding: 0 10px;
         }
+
         .gallery-item {
             background: #fff;
-            border-radius: 10px;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
         }
+
         .gallery-item img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
+            width: 100%;       /* Obliga a la imagen a no salirse del cuadro */
+            height: 150px;     /* Altura fija para que todas se vean iguales */
+            object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
+            display: block;
         }
+
         .gallery-item p {
-            font-size: 0.75rem;
-            margin: 8px 0;
-            font-weight: bold;
+            font-size: 0.8rem;
+            margin: 10px 0;
+            font-weight: 600;
+            color: #333;
         }
+
 
 </head>
 <body>
