@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Cano | Climatización Profesional</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -18,211 +17,103 @@
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
-            padding: 0;
-            /* Degradado que recuerda al cielo/aire limpio */
+            padding: 20px;
             background: linear-gradient(135deg, #caf0f8 0%, #ade8f4 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
-        .card {
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            padding: 40px 20px;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decoración superior */
-        .card::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 8px;
-            background: linear-gradient(90deg, var(--azul-frio), var(--whatsapp-green));
         }
 
         .logo {
             width: 150px;
-            height: 150px;
-            object-fit: contain;
-            border-radius: 50%;
-            border: 5px solid #f0f9ff;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            height: auto;
+            margin-bottom: 15px;
         }
 
-        h1 {
-            color: var(--azul-oscuro);
-            font-weight: 700;
-            margin: 0;
-            font-size: 1.8rem;
-        }
+        h1 { color: var(--azul-oscuro); margin-bottom: 5px; }
+        p { color: #555; margin-bottom: 25px; }
 
-        .tagline {
-            color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            margin: 20px auto; 
+        } 
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
+        .gallery-item { 
+            background: #fff; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        } 
 
-        .service-item {
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #444;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: 0.3s;
-        }
+        .gallery-item img { 
+            width: 100%; 
+            height: 120px; 
+            object-fit: cover; 
+            display: block; 
+        } 
 
-        .service-item i {
-            color: var(--azul-frio);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+        .gallery-item p { 
+            font-size: 0.7rem; 
+            margin: 8px 0; 
+            font-weight: 600; 
         }
-
-        .service-item:hover {
-            background: var(--azul-frio);
-            color: white;
-        }
-
-        .service-item:hover i { color: white; }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 16px;
-            margin: 12px 0;
-            border-radius: 15px;
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
             text-decoration: none;
             color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-weight: bold;
+            transition: transform 0.2s;
         }
 
-        .btn-wa { background-color: var(--whatsapp-green); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .btn-fb { background-color: var(--fb-blue); box-shadow: 0 4px 15px rgba(24, 119, 242, 0.3); }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        .location {
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #888;
-        }
+        .btn-ws { background-color: var(--whatsapp-green); }
+        .btn-fb { background-color: var(--fb-blue); }
+        .btn:active { transform: scale(0.95); }
     </style>
-                .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-            gap: 15px;
-            margin: 20px auto;
-            max-width: 100%;
-            padding: 0 10px;
-        }
-
-        .gallery-item {
-            background: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gallery-item img {
-            width: 100%;       /* Obliga a la imagen a no salirse del cuadro */
-            height: 150px;     /* Altura fija para que todas se vean iguales */
-            object-fit: cover; /* Recorta la imagen para que llene el espacio sin deformarse */
-            display: block;
-        }
-
-        .gallery-item p {
-            font-size: 0.8rem;
-            margin: 10px 0;
-            font-weight: 600;
-            color: #333;
-        }
-
-
 </head>
 <body>
 
-    <div class="card">
-        <img src="file_00000000b93071f58217c3cf096fec18.png" alt="Servicios Cano" class="logo">
+    <div class="container">
+        <img src="logo.png" alt="Servicios Cano" class="logo">
         
         <h1>Servicios Cano</h1>
-        <p class="tagline">Climatización & Electricidad</p>
-                <h2 style="color: var(--azul-oscuro); margin-top: 30px;">Nuestros Trabajos</h2>
+        <p>Instalación de Minisplits y Electricidad en Chihuahua</p>
+
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="1.png" alt="Instalación Minisplit">
-                <p>Instalación Minisplit</p>
+                <img src="trabajo1.png" alt="Instalación">
+                <p>Instalación</p>
             </div>
             <div class="gallery-item">
-                <img src="2.png" alt="Servicio Eléctrico">
-                <p>Mantenimiento Eléctrico</p>
-            </div>
-            <div class="gallery-item">
-                <img src="3.png" alt="Paneles Solares">
-                <p>Celdas Solares</p>
-            </div>
-        </div>
-    
-        <div class="services-grid">
-            <div class="service-item">
-                <i class="fas fa-snowflake"></i>
-                Minisplits
-            </div>
-            <div class="service-item">
-                <i class="fas fa-bolt"></i>
-                Electricidad
-            </div>
-            <div class="service-item">
-                <i class="fas fa-sun"></i>
-                Celdas Solares
-            </div>
-            <div class="service-item">
-                <i class="fas fa-tools"></i>
-                Servicio Técnico
+                <img src="trabajo2.png" alt="Mantenimiento">
+                <p>Mantenimiento</p>
             </div>
         </div>
 
-        <a href="https://wa.me/526145367791?text=Hola,%20solicito%20una%20cotización" class="btn btn-wa">
-            <i class="fab fa-whatsapp"></i> WhatsApp
+        <a href="https://wa.me/526145367791?text=Hola,%20me%20interesa%20una%20cotización" class="btn btn-ws">
+            WhatsApp de Ventas
         </a>
-
-        <a href="https://www.facebook.com/share/17Ns6HX8bk/" class="btn btn-fb">
-            <i class="fab fa-facebook-f"></i> Facebook
+        
+        <a href="https://www.facebook.com/cano.mtya" class="btn btn-fb">
+            Ver Facebook Oficial
         </a>
-
-        <div class="location">
-            <i class="fas fa-map-marker-alt"></i> Chihuahua, México
-        </div>
     </div>
 
 </body>
 </html>
-
