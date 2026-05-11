@@ -134,6 +134,29 @@
             color: #888;
         }
     </style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .gallery-item p {
+            font-size: 0.75rem;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+
 </head>
 <body>
 
@@ -142,7 +165,22 @@
         
         <h1>Servicios Cano</h1>
         <p class="tagline">Climatización & Electricidad</p>
-
+                <h2 style="color: var(--azul-oscuro); margin-top: 30px;">Nuestros Trabajos</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="1.png" alt="Instalación Minisplit">
+                <p>Instalación Minisplit</p>
+            </div>
+            <div class="gallery-item">
+                <img src="2.png" alt="Servicio Eléctrico">
+                <p>Mantenimiento Eléctrico</p>
+            </div>
+            <div class="gallery-item">
+                <img src="3.png" alt="Paneles Solares">
+                <p>Celdas Solares</p>
+            </div>
+        </div>
+    
         <div class="services-grid">
             <div class="service-item">
                 <i class="fas fa-snowflake"></i>
